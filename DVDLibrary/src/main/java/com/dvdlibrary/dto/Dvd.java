@@ -11,6 +11,7 @@ public class Dvd {
     private String MPAA;
     private String DirectorsName;
     private String UserRating;
+
     private String Studio;
 
 

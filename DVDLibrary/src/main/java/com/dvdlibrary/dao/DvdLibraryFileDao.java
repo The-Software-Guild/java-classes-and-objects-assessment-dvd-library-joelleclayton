@@ -32,6 +32,11 @@ public class DvdLibraryFileDao implements DvdLibraryDao {
     public DvdLibraryFileDao() {
     }
 
+    public DvdLibraryFileDao(String libraryTextFile){
+    }
+
+
+
 
     @Override
     public Dvd addDvd(String title, Dvd dvd) throws DvdLibraryDaoException {
@@ -61,7 +66,6 @@ public class DvdLibraryFileDao implements DvdLibraryDao {
         return removedDvd;
     }
 
-    // file setup
     //title::release date::MPAArating::DirectorName::UserRating::StudioName
 
     /*
@@ -138,8 +142,21 @@ public class DvdLibraryFileDao implements DvdLibraryDao {
      * @throws Exception if an error occurs writing to the file
      */
     private void writeDvdFile() throws DvdLibraryDaoException {
+        // NOTE FOR APPRENTICES: We are not handling the IOException - but
+        // we are translating it to an application specific exception and
+        // then simple throwing it (i.e. 'reporting' it) to the code that
+        // called us.  It is the responsibility of the calling code to
+        // handle any errors that occur.
+        //implement
+
         // Write out the DvD objects to the DVD file.
+        // NOTE TO THE APPRENTICES: We could just grab the dvd map,
+        // get the Collection of dvd and iterate over them but we've
+        // already created a method that gets a List of dvds so
+        // we'll reuse it.
+
         PrintWriter out;
+
         try {
             out = new PrintWriter(new FileWriter(DVD_FILE));
         } catch (IOException e) {
@@ -155,6 +172,9 @@ public class DvdLibraryFileDao implements DvdLibraryDao {
         }
         out.close();
     }
+
+
+
 
     @Override
     public Dvd editReleaseDate(String title, String newReleaseDate) throws DvdLibraryDaoException {
