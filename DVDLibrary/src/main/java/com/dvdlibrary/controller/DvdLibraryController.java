@@ -64,13 +64,12 @@ public class DvdLibraryController {
         return view.printMenuAndGetSelection();
     }
 
-
     /*
      Method in the Controller to orchestrate the creation of a new student. Our method will do the following:
-     Display the Create dvd banner
+     Display the create dvd banner
      Get all the dvd data from the user and create the new dvd object
      Store the new dvd object
-    Display the Create dvd Success banner
+     Display the create dvd Success banner
      */
     private void createDvd() throws DvdLibraryDaoException {
         view.displayCreateDvdBanner();
@@ -78,7 +77,6 @@ public class DvdLibraryController {
         dao.addDvd(newDvd.getTitle(), newDvd);
         view.displayCreateSuccessBanner();
     }
-
 
     /*
      a method called listDvds that will get a list of all Dvd objects in
@@ -89,8 +87,6 @@ public class DvdLibraryController {
         List<Dvd> dvdList = dao.getAllDvds();
         view.displayDvdList(dvdList);
     }
-
-
 
     /*
     This method asks the view to display the View dvd banner and get the title from the user
@@ -104,7 +100,6 @@ public class DvdLibraryController {
     }
 
 
-
     /*
     This method will ask the view to display the Remove dvd banner and ask the user for the title of the dvd to be removed
      */
@@ -115,9 +110,9 @@ public class DvdLibraryController {
         view.displayRemoveResult(removedDvd);
     }
 
-
-
-
+    /*
+    This method displays edit dvd banner then displays edit menu and calls appropriate edit method based on user input
+    */
 
     private void editDvd() throws DvdLibraryDaoException {
         view.displayEditDvdBanner();
@@ -161,9 +156,6 @@ public class DvdLibraryController {
         }
     }
 
-    private int getEditMenuSelection() {
-        return view.printEditMenuAndGetSelection();
-    }
 
     private void editReleaseDate(String title) throws DvdLibraryDaoException {
         view.displayEditReleaseDateBanner();
@@ -171,7 +163,6 @@ public class DvdLibraryController {
         dao.editReleaseDate(title, newReleaseDate);
         view.displayEditDvdSuccess();
     }
-
 
     private void editMPAA(String title) throws DvdLibraryDaoException {
         view.displayEditMPAABanner();
