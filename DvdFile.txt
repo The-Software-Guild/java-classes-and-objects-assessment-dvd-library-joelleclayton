@@ -1,1 +1,2 @@
-title::new release date::MPAA::director::rating::studio
+Toy Story::November 19, 1995::G::John Lasseter::5 stars!::Pixar
+Halloween::October 24, 1978::R::John Carpenter::Frightfully good!::Falcon International Pictures
